@@ -52,8 +52,9 @@ public static partial class TimeGuid
         var node = new byte[6];
 
         // since node is different every call, clock should likewise be random
-        RandomNumberGenerator.Fill( node );
-        RandomNumberGenerator.Fill( clockBytes );
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes( node );
+        rng.GetBytes( clockBytes );
 
         // set multicast bit for random node
         node[0] |= 0x01;
