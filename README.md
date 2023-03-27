@@ -1,6 +1,6 @@
 # Identifiable
-Generates GUIDs based on current time (UUIDv1), or based on a unique name using a 
-cryptographic hash (UUIDv3 using MD5 or UUIDv5 using SHA1). Includes non-standard variant 
+Generates GUIDs based on current time (UUIDv1), or based on a unique name using a
+cryptographic hash (UUIDv3 using MD5 or UUIDv5 using SHA1). Includes non-standard variant
 layouts of time-based GUIDs for near-sequential sorting in SQL Server and PostgreSQL.
 
 ### TimeGuid.Create
@@ -8,10 +8,11 @@ Generates time-based GUIDs for use in database clustered indexes. The following 
 * `Standard` generates a time-based GUID that conforms to [RFC 4122](https://tools.ietf.org/html/rfc4122#section-4) without exposing a MAC address.
 * `SqlServer` generates a similar identifier that is optimally arranged for use with SQL Server clustered indexes and can be transposed to/from a valid Version 1 identifier. In this arrangement, the variant will be zero to avoid mis-identification as an invalid GUID version.
 * `PostgreSql` generates a similar identifier that is optimally arranged for use with PostgreSQL clustered indexes and can be transposed to/from a valid Version 1 identifier. In this arrangement, the variant will be zero to avoid mis-identification as an invalid GUID version.
-**Why not use a random GUID?**
+
+* **Why not use a random GUID?**
 Random GUIDs have [well-known performance issues](http://www.informit.com/articles/printerfriendly/25862) when used in clustered indexes.
 These issues have been mitigated by the availability of faster hardware, but the performance of random GUIDs is still significantly worse than time-based GUIDs.
-The inability to sort by time is also a significant drawback. 
+The inability to sort by time is also a significant drawback.
 
 **Why not use NEWSEQUENTIALID or UuidCreateSequential?**
 * `NEWSEQUENTIALID` is only usable as a default constraint and the values it generates are not a valid GUID version (bytes 6/7 are reversed, causing the version to be in the wrong position).
