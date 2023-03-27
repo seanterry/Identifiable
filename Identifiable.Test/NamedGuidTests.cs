@@ -28,7 +28,7 @@ public class NamedGuidTests
         public void Requires_Valid_algorithm()
         {
             algorithm = (NamedGuidAlgorithm) int.MaxValue;
-            Assert.Throws<ArgumentException>( nameof(algorithm), () => method() );
+            Assert.Throws<ArgumentOutOfRangeException>( nameof(algorithm), () => method() );
         }
 
         [Theory]

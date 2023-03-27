@@ -62,7 +62,7 @@ public static class NamedGuid
         {
             NamedGuidAlgorithm.MD5 => MD5.Create(),
             NamedGuidAlgorithm.SHA1 => SHA1.Create(),
-            _ => throw new ArgumentException( $"Unknown algorithm: {algorithm}", nameof( algorithm ) )
+            _ => throw new ArgumentOutOfRangeException( nameof( algorithm ) )
         };
     }
 
@@ -75,7 +75,7 @@ public static class NamedGuid
     {
         NamedGuidAlgorithm.MD5 => 0x30,
         NamedGuidAlgorithm.SHA1 => 0x50,
-        _ => throw new ArgumentException( $"Unknown algorithm: {algorithm}", nameof( algorithm ) )
+        _ => throw new ArgumentOutOfRangeException( nameof( algorithm ) )
     };
 
     /// <summary>
