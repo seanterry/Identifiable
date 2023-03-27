@@ -4,6 +4,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <Version>5.0.0-preview</Version>
+    <PackageId>Identifiable</PackageId>
+    <Authors>Sean Terry</Authors>
+    <Description>Generates GUIDs based on current time (UUIDv1), MD5 hash (UUIDv3), and SHA1 hash (UUIDv5). Includes non-standard variant layouts of time-based GUIDs for near-sequential sorting in SQL Server and PostgreSQL.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>https://github.com/seanterry/Identifiable/releases</PackageReleaseNotes>
+    <Copyright>Copyright 2017 Sean Terry</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/seanterry/Identifiable</PackageProjectUrl>
+    <DocumentationFile>bin\$(Configuration)\net6.0\Identifiable.xml</DocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
